@@ -17,15 +17,16 @@ const MapView = ({ latLang }) => {
 
   useEffect(() => {
     if (latLang && latLang?.lat && latLang?.lang) {
-      mapRef.current.setView([latLang?.lat, latLang?.lang], 15);
-      markerRef.current.setLatLng([latLang?.lat, latLang?.lang]);
+      mapRef.current.setView([latLang?.lat || 0, latLang?.lang || 0], 15);
+      markerRef.current.setLatLng([latLang?.lat || 0, latLang?.lang || 0]);
     }
   }, [latLang]);
 
   return (
     <MapContainer
       ref={mapRef}
-      className="h-[400px] w-full relative z-0"
+      className="relative z-0 w-full "
+      style={{ height: "100vh" }}
       center={[latLang?.lat || 0, latLang?.lang || 0]}
       zoom={15}
       maxZoom={18}

@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
-import MapView from "./Map/Map";
+
+const MapView = dynamic(() => import("./MapView"), {
+  loading: () => <p>LOADING.......</p>, // A loading indicator to show while loading
+  ssr: false, // Avoid server-side rendering (only render on the client side)
+});
 
 const Main = () => {
   const [ipValue, setIpValue] = useState("");
