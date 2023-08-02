@@ -8,6 +8,7 @@ export const metadata = {
   description:
     "IP Address tracker using next.js and leaflet.js with tailwind css",
   content: "IP Address Tracker",
+  property: "Next.js ",
 };
 
 export default function RootLayout({ children }) {
