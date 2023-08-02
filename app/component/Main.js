@@ -64,8 +64,8 @@ const Main = () => {
               <input
                 type="text"
                 name="ip-address"
+                aria-label="ip-addres"
                 id="ip-address"
-                autoComplete="given-ip"
                 onChange={(e) => setIpValue(e.target.value)}
                 value={ipValue}
                 className="block px-3.5 w-full py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 rounded-s-lg"
